@@ -1,0 +1,349 @@
+        /* Estilos gerais */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: 'Ubuntu', sans-serif;
+      }
+      
+      body {
+          background: linear-gradient(135deg, #1e3c72, #2a5298);
+          color: #fff;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      
+      .container {
+          background-color: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border-radius: 15px;
+          padding: 2rem;
+          width: 90%;
+          max-width: 450px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Estilos do formulário de login */
+      #login-container {
+          text-align: center;
+      }
+      
+      #login-container h2 {
+          margin-bottom: 1.5rem;
+          font-size: 1.8rem;
+      }
+      
+      #login-form input {
+          width: 100%;
+          padding: 0.8rem;
+          margin-bottom: 1rem;
+          border: none;
+          border-radius: 5px;
+          background-color: rgba(255, 255, 255, 0.2);
+          color: #fff;
+          font-size: 1rem;
+      }
+      
+      #login-form input::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+      }
+      
+      #password-strength {
+          height: 5px;
+          margin-bottom: 1rem;
+          border-radius: 3px;
+          transition: all 0.3s;
+      }
+      
+      .strength-0 {
+          width: 20%;
+          background-color: #ff5252;
+      }
+      
+      .strength-1 {
+          width: 40%;
+          background-color: #ff5252;
+      }
+      
+      .strength-2 {
+          width: 60%;
+          background-color: #ffb142;
+      }
+      
+      .strength-3 {
+          width: 80%;
+          background-color: #33d9b2;
+      }
+      
+      .strength-4 {
+          width: 100%;
+          background-color: #218c74;
+      }
+      
+      #login-form button {
+          width: 100%;
+          padding: 0.8rem;
+          border: none;
+          border-radius: 5px;
+          background-color: #fff;
+          color: #1e3c72;
+          font-size: 1rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.3s;
+      }
+      
+      #login-form button:hover {
+          background-color: #f0f0f0;
+      }
+      
+      #login-form button:disabled {
+          background-color: #cccccc;
+          cursor: not-allowed;
+      }
+      
+      /* Estilos do conteúdo principal (escondido inicialmente) */
+      #main-content {
+          display: none;
+      }
+      
+      /* Estilos do formulário de clima */
+      .form {
+          margin-bottom: 1.5rem;
+      }
+      
+      .form h3 {
+          margin-bottom: 1rem;
+          text-align: center;
+      }
+      
+      .form-input-container {
+          display: flex;
+          gap: 0.5rem;
+      }
+      
+      .form-input-container input {
+          flex: 1;
+          padding: 0.8rem;
+          border: none;
+          border-radius: 5px;
+          background-color: rgba(255, 255, 255, 0.2);
+          color: #fff;
+          font-size: 1rem;
+      }
+      
+      .form-input-container input::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+      }
+      
+      .form-input-container button {
+          padding: 0 1rem;
+          border: none;
+          border-radius: 5px;
+          background-color: #fff;
+          color: #1e3c72;
+          cursor: pointer;
+          transition: all 0.3s;
+      }
+      
+      .form-input-container button:hover {
+          background-color: #f0f0f0;
+      }
+      
+      /* Estilos dos dados do clima */
+      #weather-data {
+          margin-top: 1.5rem;
+      }
+      
+      #weather-data h2 {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+          font-size: 1.2rem;
+      }
+      
+      #weather-data #country-flag {
+          height: 20px;
+          border-radius: 3px;
+      }
+      
+      #temperature {
+          font-size: 4rem;
+          font-weight: bold;
+          text-align: center;
+          margin: 1rem 0;
+      }
+      
+      #description-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 1.5rem;
+      }
+      
+      #weather-icon {
+          height: 40px;
+      }
+      
+      #details-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+      }
+      
+      #details-container p {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+      }
+      
+      #coordinates {
+          margin-top: 1.5rem;
+          text-align: center;
+          font-size: 0.9rem;
+          opacity: 0.8;
+      }
+      
+      /* Previsão do tempo */
+      #forecast-container {
+          margin-top: 2rem;
+      }
+      
+      #forecast-container h3 {
+          margin-bottom: 1rem;
+          text-align: center;
+      }
+      
+      #forecast-days {
+          display: flex;
+          justify-content: space-between;
+          gap: 0.5rem;
+          overflow-x: auto;
+          padding-bottom: 0.5rem;
+      }
+      
+      .forecast-day {
+          min-width: 80px;
+          text-align: center;
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 5px;
+          padding: 0.5rem;
+      }
+      
+      .forecast-day img {
+          width: 40px;
+          height: 40px;
+          margin: 0.3rem 0;
+      }
+      
+      /* Mensagem de erro */
+      #error-message {
+          margin-top: 1.5rem;
+          text-align: center;
+          color: #ff6b6b;
+      }
+      
+      /* Loader */
+      #loader {
+          text-align: center;
+          margin: 1.5rem 0;
+      }
+      
+      #loader i {
+          font-size: 2rem;
+          animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+      }
+      
+      /* Sugestões de cidades */
+      #suggestions {
+          margin-top: 1.5rem;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+      }
+      
+      #suggestions button {
+          padding: 0.5rem;
+          border: none;
+          border-radius: 5px;
+          background-color: rgba(255, 255, 255, 0.1);
+          color: #fff;
+          cursor: pointer;
+          transition: all 0.3s;
+      }
+      
+      #suggestions button:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+      }
+      
+      /* Botão de logout */
+      #logout-btn {
+          width: 100%;
+          margin-top: 1.5rem;
+          padding: 0.8rem;
+          border: none;
+          border-radius: 5px;
+          background-color: rgba(255, 255, 255, 0.1);
+          color: #fff;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: all 0.3s;
+      }
+      
+      #logout-btn:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+      }
+      
+      /* Histórico de consultas */
+      #history-container {
+          margin-top: 1.5rem;
+      }
+      
+      #history-container h3 {
+          margin-bottom: 0.5rem;
+          text-align: center;
+      }
+      
+      #history-list {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+      }
+      
+      .history-item {
+          padding: 0.5rem;
+          background-color: rgba(255, 255, 255, 0.05);
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all 0.3s;
+      }
+      
+      .history-item:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      /* Classes utilitárias */
+      .hide {
+          display: none !important;
+      }
+      
+      .text-center {
+          text-align: center;
+      }
+      
+      .mt-1 {
+          margin-top: 0.5rem;
+      }
+      
+      .mt-2 {
+          margin-top: 1rem;
+      }
